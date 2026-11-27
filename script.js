@@ -7,7 +7,7 @@
 // 값을 모르면 null 그대로 두세요. 숫자를 임의로 만들지 않습니다.
 // ================================================================
 const SITE_CONFIG = {
-  appUrl: "",
+  appUrl: "https://class-group-maker-njerybg9q-wnsghks959765-jpg.vercel.app/",
   beforeSeconds: null,
   afterSeconds: null
 };

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#152540">
+  <meta name="description" content="초등교사를 위한 우리 반 모둠 편성기. 학생 관리, 참여자 선택, 무작위·균형 배정, 학생 공개용 화면까지 한눈에 소개합니다.">
+  <title>우리 반 모둠 편성기 | 해커톤 프로젝트 소개</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="우리 반 모둠 편성기 소개 사이트 맨 위로">
+        <span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>우리 반 모둠 편성기 <small>PROJECT SHOWCASE</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-controls="main-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" id="main-navigation" aria-label="주요 메뉴">
+        <a href="#problem">문제</a>
+        <a href="#change">개발 전후</a>
+        <a href="#features">기능</a>
+        <a href="#demo">시연</a>
+        <a href="#code">코드</a>
+        <a href="#reflection">성찰</a>
+      </nav>
+      <a class="header-cta" data-app-link href="#demo">앱 시연 보기 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> AI × EDUCATION HACKATHON</p>
+          <h1 id="hero-title">모둠을 나누는 시간은 줄이고,<br><span>수업에 집중하는 시간을 늘리다.</span></h1>
+          <p class="hero-description">학생의 특성을 고려한 모둠 구성, 이제 명단과 조건만 정하면 돼요.<br>초등교사의 실제 수업 준비에서 출발한 웹앱, <strong>우리 반 모둠 편성기</strong>를 소개합니다.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" data-app-link href="#demo">가명으로 시연 보기 <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline-light" href="#problem">프로젝트 살펴보기 <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-stats" aria-label="앱 주요 특징">
+            <div><strong>1–8개</strong><span>학생 분류 그룹</span></div>
+            <div><strong>2가지</strong><span>모둠 배정 방식</span></div>
+            <div><strong>3단계</strong><span>학생 관리 → 편성</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="27명을 7모둠으로 나누는 화면의 개념을 보여주는 그림">
+          <div class="floating-label floating-label-left"><span class="green-pulse"></span> 배정 조건을 유지하며 다시 섞기</div>
+          <div class="sample-app">
+            <div class="sample-app-head"><span class="app-dot"></span><div><strong>우리 반 모둠 편성기</strong><small>배정 결과 · 화면 예시</small></div><span class="sample-status">완료</span></div>
+            <div class="sample-app-toolbar"><strong>7개 모둠 편성 완료</strong><span>전체 27명</span></div>
+            <div class="sample-groups">
+              <div class="sample-team"><strong>1모둠</strong><span class="avatars"><i></i><i></i><i></i><i></i></span><small>4명</small></div>
+              <div class="sample-team"><strong>2모둠</strong><span class="avatars"><i></i><i></i><i></i><i></i></span><small>4명</small></div>
+              <div class="sample-team"><strong>3모둠</strong><span class="avatars"><i></i><i></i><i></i><i></i></span><small>4명</small></div>
+              <div class="sample-team"><strong>4모둠</strong><span class="avatars"><i></i><i></i><i></i><i></i></span><small>4명</small></div>
+              <div class="sample-team"><strong>5모둠</strong><span class="avatars"><i></i><i></i><i></i><i></i></span><small>4명</small></div>
+              <div class="sample-team"><strong>6모둠</strong><span class="avatars"><i></i><i></i><i></i><i></i></span><small>4명</small></div>
+              <div class="sample-team"><strong>7모둠</strong><span class="avatars"><i></i><i></i><i></i></span><small>3명</small></div>
+            </div>
+            <div class="sample-app-foot"><span>✓ 학생 중복·누락 없는 편성</span><span>균형 배정</span></div>
+          </div>
+          <div class="floating-label floating-label-right">✦ 초등교실 수업 준비 도구</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-problem" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">01 / THE PROBLEM</p><h2 id="problem-title">모둠 편성, 생각보다 손이 많이 갑니다.</h2></div><p>체육시간 두 팀을 나누거나 모둠 과제를 준비할 때, 교사는 숫자뿐 아니라 학생의 특성도 함께 고려합니다.</p></div>
+        <div class="problem-grid">
+          <article class="problem-card"><span class="problem-number">01</span><div class="problem-icon" aria-hidden="true">↔</div><h3>정원을 맞추는 일</h3><p>모둠 개수에 따라 몇 명씩 들어갈지 직접 계산하고 다시 확인해야 합니다.</p></article>
+          <article class="problem-card"><span class="problem-number">02</span><div class="problem-icon" aria-hidden="true">◎</div><h3>학생 특성을 고려하는 일</h3><p>미리 정한 분류 그룹의 학생들이 일부 모둠에 몰리지 않도록 배치해야 합니다.</p></article>
+          <article class="problem-card"><span class="problem-number">03</span><div class="problem-icon" aria-hidden="true">⟳</div><h3>조건이 바뀔 때마다 다시</h3><p>결석자가 생기거나 모둠을 다시 구성하면 앞의 과정을 반복해야 합니다.</p></article>
+        </div>
+        <div class="problem-conclusion"><span class="sparkle" aria-hidden="true">✦</span><p><strong>만들고 싶었던 것</strong> — 학생 명단을 한 번 등록해 두고, 수업 목적에 맞게 빠르고 편리하게 모둠을 구성하는 도구.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-change" id="change" aria-labelledby="change-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">02 / BEFORE & AFTER</p><h2 id="change-title">복잡한 수작업에서 간단한 조건 선택으로</h2></div><p>학생 명단을 처음 등록하는 시간과, 이미 등록된 명단으로 반복 편성하는 시간은 구분해서 비교합니다.</p></div>
+        <div class="comparison">
+          <article class="compare-card before"><div class="compare-head"><span class="pill pill-muted">BEFORE · 수작업</span><span>준비 과정</span></div><h3>직접 확인하고, 나누고, 조정하기</h3><ol class="steps"><li>학생 명단과 참여 인원 확인</li><li>모둠별 인원 계산</li><li>분류 그룹을 고려해 수동 배정</li><li>중복·누락 여부 재확인</li></ol><div class="compare-measure"><small>반복 편성 소요 시간</small><strong id="before-time">실측값 입력 전</strong></div></article>
+          <div class="compare-arrow" aria-hidden="true">→</div>
+          <article class="compare-card after"><div class="compare-head"><span class="pill pill-blue">AFTER · 웹앱</span><span>수업에 맞춰 선택</span></div><h3>명단 불러오고, 조건 정하고, 배정하기</h3><ol class="steps"><li>저장된 학생 명단 불러오기</li><li>참여자와 모둠 정원 설정</li><li>무작위 또는 균형 배정 선택</li><li>학생 공개용 화면에서 바로 확인</li></ol><div class="compare-measure"><small>반복 편성 소요 시간</small><strong id="after-time">실측값 입력 전</strong></div></article>
+        </div>
+        <p class="measure-note"><span aria-hidden="true">ⓘ</span> 발표 전 같은 조건(예: 27명·7모둠)으로 직접 시간을 측정한 뒤, <code>script.js</code> 맨 위의 시간 값을 입력해 주세요. 실제로 측정하지 않은 단축 시간은 표시하지 않습니다.</p>
+      </div>
+    </section>
+
+    <section class="section section-features" id="features" aria-labelledby="features-title">
+      <div class="container"><div class="section-heading"><div><p class="eyebrow">03 / CORE FEATURES</p><h2 id="features-title">교사의 실제 사용 흐름을 따라 설계했어요.</h2></div><p>학생 관리, 모둠 설정, 결과 공개까지 필요한 일만 순서대로 진행합니다.</p></div>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-index">STEP 01</span><div class="feature-illustration"><div class="mini-person-row"><span>김민수</span><em>1그룹</em></div><div class="mini-person-row"><span>이하린</span><em>2그룹</em></div><div class="mini-person-row"><span>박지우</span><em>미분류</em></div></div><h3>학생 관리</h3><p>학생을 등록하고 1~8개 분류 그룹으로 정리해요. 명단과 그룹 설정은 Supabase에 저장됩니다.</p></article>
+          <article class="feature-card"><span class="feature-index">STEP 02</span><div class="feature-illustration"><div class="mini-setting"><span>참여 학생</span><strong>27명 중 25명</strong></div><div class="mini-setting"><span>모둠 수</span><strong>7모둠</strong></div><div class="mini-radio">● 균형 배정 <span>○ 무작위</span></div></div><h3>모둠 설정</h3><p>참여 학생과 모둠 수를 정하고, 각 모둠의 정원을 직접 조정할 수 있어요.</p></article>
+          <article class="feature-card"><span class="feature-index">STEP 03</span><div class="feature-illustration"><div class="mini-result"><span><b>1모둠</b><small>4명</small></span><span><b>2모둠</b><small>4명</small></span><span><b>3모둠</b><small>4명</small></span><span><b>4모둠</b><small>4명</small></span></div><div class="mini-banner">↻ 학생 공개용 화면에서 다시 섞기</div></div><h3>결과 확인·공개</h3><p>모둠 결과를 전자칠판에 보여주고, 공개 화면을 유지한 채 바로 다시 섞을 수 있어요.</p></article>
+        </div>
+        <div class="privacy-note"><span aria-hidden="true">🔒</span><span><strong>공개 화면은 교사용 분류 정보를 숨깁니다.</strong> 학생 이름과 모둠 결과만 표시하며, 편성 결과는 저장하지 않습니다.</span></div>
+      </div>
+    </section>
+
+    <section class="section section-demo" id="demo" aria-labelledby="demo-title">
+      <div class="container demo-layout">
+        <div class="demo-description"><p class="eyebrow">04 / LIVE DEMO</p><h2 id="demo-title">직접 한 번 섞어 보세요.</h2><p>아래는 <strong>가명 학생 12명으로 만든 소개 사이트 전용 미리보기</strong>예요. 실제 앱의 전체 기능을 대체하지 않으며, 발표 때는 옆의 버튼으로 원본 앱을 열어 시연하면 됩니다.</p><div class="demo-points"><div><span>✓</span> 모둠별 정원을 유지</div><div><span>✓</span> 무작위·균형 방식 선택</div><div><span>✓</span> 학생 공개용 결과만 표시</div></div><a class="button button-dark" data-app-link href="#demo">가명 시연 보기 <span aria-hidden="true">↗</span></a><p class="demo-hint" id="app-link-status" role="status">실제 앱 링크는 연결 전입니다. 아래 미리보기를 먼저 이용할 수 있어요.</p></div>
+        <div class="demo-panel"><div class="demo-panel-head"><div><span class="live-dot"></span><strong>모둠 배정 미리보기</strong><small>가명 데이터 · 12명</small></div><span class="demo-secure">교사용 분류 숨김</span></div>
+          <div class="demo-controls" role="group" aria-label="배정 방식 선택"><button type="button" class="mode-button is-active" data-mode="balanced" aria-pressed="true">균형 배정</button><button type="button" class="mode-button" data-mode="random" aria-pressed="false">무작위 배정</button><button type="button" id="reshuffle" class="reshuffle-button">↻ 다시 섞기</button></div>
+          <div id="demo-groups" class="demo-groups" aria-live="polite" aria-atomic="true"></div>
+          <div class="demo-panel-footer"><span id="demo-status" role="status">배정 준비 중</span><span>학급 실제 데이터와 무관</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-code" id="code" aria-labelledby="code-title">
+      <div class="container"><div class="section-heading"><div><p class="eyebrow">05 / HOW IT WORKS</p><h2 id="code-title">AI의 도움으로 만들고, 중요한 권한은 직접 확인했어요.</h2></div><p>스펙 작성부터 GitHub 이슈, 코드 수정, Vercel 배포, Supabase 권한 점검까지 작은 단위로 진행했습니다.</p></div>
+        <div class="process-line" aria-label="개발 과정"><div><b>01</b><span>스펙 작성</span></div><i aria-hidden="true">›</i><div><b>02</b><span>GitHub 이슈</span></div><i aria-hidden="true">›</i><div><b>03</b><span>AI와 코드 작성</span></div><i aria-hidden="true">›</i><div><b>04</b><span>Vercel 배포</span></div><i aria-hidden="true">›</i><div><b>05</b><span>보안·기능 검증</span></div></div>
+        <div class="code-layout"><div class="code-intro"><span class="code-tag">핵심 코드 3곳</span><h3>읽기 쉬운 코드로 핵심 원리 설명하기</h3><p>발표에서는 모든 코드를 읽기보다, 실제 코드의 <strong>참여자 선택·균형 배정·RLS 정책</strong>이 어떤 역할인지 짧게 설명하면 좋아요.</p><p class="code-disclaimer">아래는 <strong>원리를 설명하는 예시 코드</strong>입니다. 제출용으로 실제 사용한 코드 세 줄을 보여줘야 한다면 GitHub 원본과 대조하여 바꿔 주세요.</p><a class="text-link" href="https://github.com/wnsghks959765-jpg/My_intro" target="_blank" rel="noopener noreferrer">실제 앱 GitHub 코드 보기 <span aria-hidden="true">↗</span></a></div>
+        <div class="code-window"><div class="code-tabs" role="tablist" aria-label="코드 예시 선택"><button class="code-tab is-current" id="tab-participants" type="button" role="tab" aria-selected="true" aria-controls="code-content" data-snippet="participants">참여자</button><button class="code-tab" id="tab-balance" type="button" role="tab" aria-selected="false" aria-controls="code-content" data-snippet="balance">균형 배정</button><button class="code-tab" id="tab-security" type="button" role="tab" aria-selected="false" aria-controls="code-content" data-snippet="security">RLS 권한</button></div><pre id="code-content" role="tabpanel" aria-labelledby="tab-participants"><code></code></pre><div id="code-explanation" class="code-explanation" aria-live="polite"></div></div></div>
+      </div>
+    </section>
+
+    <section class="section section-reflection" id="reflection" aria-labelledby="reflection-title">
+      <div class="container"><div class="section-heading"><div><p class="eyebrow">06 / FEEDBACK & NEXT</p><h2 id="reflection-title">만들면서 발견하고, 다시 고쳤습니다.</h2></div><p>처음 생각한 기능에서 멈추지 않고 실제 사용 흐름을 점검하며 기능을 개선했습니다.</p></div>
+        <div class="reflection-grid"><div class="reflection-card"><div class="reflection-top"><span class="reflection-mark">↗</span><span class="pill pill-mint">반영한 개선</span></div><h3>개발 중 발견한 불편함을 수정</h3><div class="improvement"><small>처음</small><p>학생 분류 그룹은 4개로 고정</p><strong>→ 1~8개까지 설정·저장</strong></div><div class="improvement"><small>처음</small><p>공개 화면에서 다시 섞으려면 화면 이동</p><strong>→ 공개 화면에서 즉시 재배정</strong></div><div class="improvement"><small>점검</small><p>테이블마다 별도 접근 권한 확인 필요</p><strong>→ RLS 정책과 교사별 데이터 분리 검사</strong></div></div>
+        <div class="reflection-card future"><div class="reflection-top"><span class="reflection-mark">…</span><span class="pill pill-muted">향후 확장 아이디어</span></div><h3>다음에는 이런 기능도 생각해 볼 수 있어요.</h3><div class="future-row"><span>01</span><p>지난 모둠 편성 기록 저장·불러오기</p></div><div class="future-row"><span>02</span><p>모둠 결과 인쇄용 화면</p></div><div class="future-row"><span>03</span><p>실제 교실 사용성 검토와 접근성 개선</p></div><p class="future-note">위 내용은 현재 구현 기능이 아니라 추후 개발 후보입니다. 외부에서 받은 피드백이 있다면 발표 전 실제 받은 의견으로 수정하세요.</p></div></div>
+      </div>
+    </section>
+
+    <section class="closing"><div class="container closing-inner"><p class="eyebrow">MADE FOR CLASSROOMS</p><h2>교사의 아이디어가 실제 수업 도구가 되기까지.</h2><p>작은 불편함에서 시작한 프로젝트가 스펙, 이슈, 코드, 테스트를 거쳐 하나의 웹앱으로 완성되었습니다.</p><div class="closing-actions"><a class="button button-primary" data-app-link href="#demo">가명 시연 보기 <span aria-hidden="true">↗</span></a><a class="button button-outline-light" href="https://github.com/wnsghks959765-jpg/My_intro" target="_blank" rel="noopener noreferrer">개발 기록 보기 <span aria-hidden="true">↗</span></a></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><span>우리 반 모둠 편성기 · 해커톤 발표용 소개 사이트</span><a href="#top">맨 위로 ↑</a><small>가명·화면 예시만 사용 / 실제 학생 개인정보 없음</small></div></footer>
+</body>
+</html>

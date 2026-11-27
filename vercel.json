@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "framework": null,
+  "buildCommand": "mkdir -p dist && cp index.html style.css script.js dist/",
+  "outputDirectory": "dist"
+}

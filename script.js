@@ -1,15 +1,8 @@
 "use strict";
 
-// ================================================================
-// 발표 전에 여기만 수정하세요.
-// appUrl: 실제 '우리 반 모둠 편성기' Vercel 배포 주소 (https://로 시작)
-// beforeSeconds / afterSeconds: 동일 조건으로 직접 측정한 '반복 편성' 시간(초)
-// 값을 모르면 null 그대로 두세요. 숫자를 임의로 만들지 않습니다.
-// ================================================================
+// 기존 실제 앱 링크를 유지합니다.
 const SITE_CONFIG = {
-  appUrl: "https://class-group-maker-njerybg9q-wnsghks959765-jpg.vercel.app/",
-  beforeSeconds: null,
-  afterSeconds: null
+  appUrl: "https://class-group-maker-njerybg9q-wnsghks959765-jpg.vercel.app/"
 };
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -29,18 +22,8 @@ $$('[data-app-link]').forEach(link => {
   }
 });
 if (validAppLink && $("#app-link-status")) {
-  $("#app-link-status").textContent = "실제 앱은 별도 탭에서 열립니다. 테스트용 계정으로 미리 로그인해 두세요.";
+  $("#app-link-status").textContent = "실제 앱은 새 탭에서 열리며 교사 계정으로 로그인해 사용할 수 있습니다.";
 }
-
-// 개발 전/후 시간은 직접 측정값이 있을 때만 표시합니다.
-const formatTime = (sec) => {
-  if (!Number.isFinite(sec) || sec < 0) return "실측값 입력 전";
-  const minutes = Math.floor(sec / 60);
-  const seconds = Math.round(sec % 60);
-  return minutes > 0 ? `${minutes}분 ${String(seconds).padStart(2, "0")}초` : `${seconds}초`;
-};
-$("#before-time").textContent = formatTime(SITE_CONFIG.beforeSeconds);
-$("#after-time").textContent = formatTime(SITE_CONFIG.afterSeconds);
 
 // 모바일 메뉴
 const menuButton = $(".menu-toggle");
@@ -151,30 +134,30 @@ $$(".mode-button").forEach(button => {
 $("#reshuffle").addEventListener("click", renderDemo);
 renderDemo();
 
-const snippets = {
-  participants: {
-    code: `// 참여한 학생만 배정 대상에 포함\nconst participants = students.filter(\n  student => student.isSelected\n);`,
-    explanation: "결석·미참여 학생을 제외하고 실제 편성 대상만 선정하는 개념입니다."
-  },
-  balance: {
-    code: `// 모둠 정원을 넘기지 않으면서\n// 같은 분류 학생이 몰리지 않게 배정\nchooseTeam({ capacity, groupCounts });`,
-    explanation: "선택한 그룹 수와 각 모둠 정원을 고려해 학생을 나누는 원리를 의사코드로 나타냈습니다."
-  },
-  security: {
-    code: `-- RLS 접근 허용 조건의 예\nUSING (auth.uid() = teacher_id)\nWITH CHECK (auth.uid() = teacher_id)`,
-    explanation: "로그인한 교사와 기록의 소유자가 일치할 때만 접근을 허용하는 RLS 조건의 예입니다."
-  }
-};
-function selectSnippet(key) {
-  $$(".code-tab").forEach(btn => {
-    const active = btn.dataset.snippet === key;
-    btn.classList.toggle("is-current", active);
-    btn.setAttribute("aria-selected", String(active));
-    btn.tabIndex = active ? 0 : -1;
+// 발표 사이트 코드 영역: 실제 GitHub 코드 및 보안 정책 캡처를 탭으로 전환합니다.
+const evidenceTabs = $$("[data-evidence]");
+function showEvidence(selectedTab, moveFocus = false) {
+  evidenceTabs.forEach(tab => {
+    const active = tab === selectedTab;
+    tab.classList.toggle("is-current", active);
+    tab.setAttribute("aria-selected", String(active));
+    tab.tabIndex = active ? 0 : -1;
+    const panel = document.getElementById(tab.getAttribute("aria-controls"));
+    if (panel) panel.hidden = !active;
   });
-  $("#code-content code").textContent = snippets[key].code;
-  $("#code-explanation").textContent = snippets[key].explanation;
-  $("#code-content").setAttribute("aria-labelledby", `tab-${key}`);
+  if (moveFocus) selectedTab.focus();
 }
-$$(".code-tab").forEach(btn => btn.addEventListener("click", () => selectSnippet(btn.dataset.snippet)));
-selectSnippet("participants");
+evidenceTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => showEvidence(tab));
+  tab.addEventListener("keydown", event => {
+    if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    let next = index;
+    if (event.key === "ArrowRight") next = (index + 1) % evidenceTabs.length;
+    if (event.key === "ArrowLeft") next = (index - 1 + evidenceTabs.length) % evidenceTabs.length;
+    if (event.key === "Home") next = 0;
+    if (event.key === "End") next = evidenceTabs.length - 1;
+    showEvidence(evidenceTabs[next], true);
+  });
+});
+if (evidenceTabs.length) showEvidence(evidenceTabs[0]);
